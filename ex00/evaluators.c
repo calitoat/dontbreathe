@@ -6,7 +6,7 @@
 /*   By: icuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:23:47 by icuz              #+#    #+#             */
-/*   Updated: 2016/11/13 00:39:11 by icuz             ###   ########.fr       */
+/*   Updated: 2016/11/13 01:02:09 by icuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	parse_atom(char **expr)
 
 int	parse_factor(char **expr)
 {
-	int  nb;
-	int  nb2;
-	char op;
+	int		nb;
+	int		nb2;
+	char	op;
 
 	nb = parse_atom(expr);
 	while (**expr)
@@ -51,16 +51,16 @@ int	parse_factor(char **expr)
 		else if (op == '*')
 			nb = (nb * nb2);
 		else
-		   	nb = (nb % nb2);
+			nb = (nb % nb2);
 	}
 	return (nb);
 }
 
 int	parse_summands(char **expr)
 {
-	int  nb;
-	int  nb2;
-	char op;
+	int		nb;
+	int		nb2;
+	char	op;
 
 	nb = parse_factor(expr);
 	while (**expr)
@@ -68,7 +68,7 @@ int	parse_summands(char **expr)
 		while (**expr == ' ')
 			(*expr)++;
 		op = **expr;
-		if (op != '+' && op!= '-')
+		if (op != '+' && op != '-')
 			return (nb);
 		(*expr)++;
 		nb2 = parse_factor(expr);
@@ -80,7 +80,7 @@ int	parse_summands(char **expr)
 	return (nb);
 }
 
-int eval_expr(char *expr)
+int	eval_expr(char *expr)
 {
 	return (parse_summands(&expr));
 }

@@ -6,7 +6,7 @@
 /*   By: icuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:12:00 by icuz              #+#    #+#             */
-/*   Updated: 2016/11/12 23:57:17 by icuz             ###   ########.fr       */
+/*   Updated: 2016/11/13 01:00:00 by icuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_putnbr(int nb)
 {
 	if (nb < 0)
 	{
-		ft_putchar ('-');
+		ft_putchar('-');
 		ft_putnbr(-nb);
 		return ;
 	}
@@ -40,7 +40,7 @@ int		ft_atoi(char **str)
 	int nbr;
 
 	nbr = 0;
-	while(**str >= '0' && **str <= '9')
+	while (**str >= '0' && **str <= '9')
 	{
 		nbr = nbr * 10 + (**str - '0');
 		(*str)++;
