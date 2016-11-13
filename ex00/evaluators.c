@@ -6,7 +6,7 @@
 /*   By: icuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:23:47 by icuz              #+#    #+#             */
-/*   Updated: 2016/11/13 01:02:09 by icuz             ###   ########.fr       */
+/*   Updated: 2016/11/13 02:54:23 by icuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	parse_summands(char **expr)
 	return (nb);
 }
 
-int	eval_expr(char *expr)
+int	eval_expr(char *str)
 {
-	return (parse_summands(&expr));
+	return (parse_summands(&str));
 }
