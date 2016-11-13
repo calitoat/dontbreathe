@@ -6,7 +6,7 @@
 /*   By: icuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:23:47 by icuz              #+#    #+#             */
-/*   Updated: 2016/11/10 23:11:01 by icuz             ###   ########.fr       */
+/*   Updated: 2016/11/13 00:39:11 by icuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ int	parse_factor(char **expr)
 		(*expr)++;
 		nb2 = parse_atom(expr);
 		if (op == '/')
-			nb /= nb2;
+			nb = (nb / nb2);
 		else if (op == '*')
-			nb *= nb2;
+			nb = (nb * nb2);
 		else
-		   	nb %= nb;
+		   	nb = (nb % nb2);
 	}
 	return (nb);
 }
@@ -73,9 +73,9 @@ int	parse_summands(char **expr)
 		(*expr)++;
 		nb2 = parse_factor(expr);
 		if (op == '+')
-			nb += nb2;
+			nb = (nb + nb2);
 		else
-			nb -= nb2;
+			nb = (nb - nb2);
 	}
 	return (nb);
 }
